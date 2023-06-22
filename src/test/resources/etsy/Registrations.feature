@@ -7,3 +7,4 @@ Feature: Registrations Tests
     When I enter valid firstName and password
     And I click on register button
     Then I should be on home page
+

@@ -28,8 +28,21 @@ public class RegistrationPage {
      public WebElement continuebutton;
 
 
-     @AndroidFindBy(id = "com.etsy.android:id/clg_text_input")
-     public WebElement ;
+     @AndroidFindBy(xpath = "//*[@resource-id='join_neu_first_name_field']")
+     public WebElement firstname ;
+
+
+     @AndroidFindBy(xpath = "//*[@resource-id='join_neu_password_field']")
+     public WebElement password ;
+
+
+     @AndroidFindBy(className = "android.widget.Button")
+     public WebElement registrationButton ;
+
+
+
+     @AndroidFindBy(id= "com.etsy.android:id/cancelText")
+     public WebElement ContinueAsGuest;
 
 
 

@@ -25,11 +25,11 @@ public class MDriver {
             desiredCapabilities.setCapability("appPackage", "com.etsy.android");
             desiredCapabilities.setCapability("appActivity", "com.etsy.android.ui.BOEActivity");
             desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\umitkalemkus\\Desktop\\Appium\\etsy\\etsy.apk");
-            desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
             desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.0");
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 6");
+            //desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, false);
 
             try {
                 URL url = new URL("http://127.0.0.1:4723/wd/hub");
