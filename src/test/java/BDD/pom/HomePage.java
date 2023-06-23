@@ -33,4 +33,11 @@ public class HomePage {
     public List<WebElement> homeIconList;
 
 
+    @AndroidFindBy(xpath ="//*[@resource-id='com.etsy.android:id/listing_image']")
+    public List<WebElement> homePageContents;
+
+
+
+
+
 }
