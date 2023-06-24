@@ -36,6 +36,14 @@ public class HomePage {
     @AndroidFindBy(xpath ="//*[@resource-id='com.etsy.android:id/listing_image']")
     public List<WebElement> homePageContents;
 
+    @AndroidFindBy(id ="com.etsy.android:id/search_src_text")
+    public List<WebElement> searchBoxList;
+
+
+    @AndroidFindBy(id ="com.etsy.android:id/search_src_text")
+    public WebElement searchBox;
+
+
 
 
 
