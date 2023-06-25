@@ -131,5 +131,6 @@ public class HomeDefinition {
 
     @When("I click on search with image button")
     public void iClickOnSearchWithImageButton() {
+        homePage.camIcon.click();
     }
 }

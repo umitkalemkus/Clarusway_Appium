@@ -44,6 +44,16 @@ public class HomePage {
     public WebElement searchBox;
 
 
+    @AndroidFindBy(xpath ="//*[@content-desc='Search by image']")
+    public WebElement camIcon;
+
+
+
+
+
+    //*[@content-desc='Search by image']
+
+
 
 
 
