@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.math3.analysis.function.Exp;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
@@ -129,8 +130,24 @@ public class HomeDefinition {
 
     }
 
+
+
+
     @When("I click on search with image button")
     public void iClickOnSearchWithImageButton() {
         homePage.camIcon.click();
+
+    }
+
+    @And("I click on select an existing photo")
+    public void iClickOnSelectAnExistingPhoto() {
+        homePage.existingphoto.click();
+        Alert alert =getMDriver().switchTo().alert();
+        alert.accept();
+
+    }
+
+    @And("I select photo from library")
+    public void iSelectPhotoFromLibrary() {
     }
 }

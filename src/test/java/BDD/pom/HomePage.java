@@ -48,10 +48,15 @@ public class HomePage {
     public WebElement camIcon;
 
 
+    @AndroidFindBy(xpath ="//*[@text='Select an existing photo']")
+    public WebElement existingphoto;
 
 
 
-    //*[@content-desc='Search by image']
+
+
+
+
 
 
 
