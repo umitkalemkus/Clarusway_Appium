@@ -3,6 +3,7 @@ package BDD.stepdefinition;
 import BDD.pom.HomePage;
 import BDD.pom.ItemPage;
 import BDD.pom.RegistrationPage;
+import BDD.pom.SeachPage;
 import com.github.javafaker.Faker;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
@@ -21,9 +22,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.MDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.MDriver.getAndroidDriver;
 import static utilities.MDriver.getMDriver;
 
 public class HomeDefinition {
@@ -32,6 +36,8 @@ public class HomeDefinition {
     HomePage homePage = new HomePage();
 
     ItemPage itemPage = new ItemPage();
+
+    SeachPage seachPage = new SeachPage();
 
     List<String> contentList1 = new ArrayList<>();
     List<String> contentList2 = new ArrayList<>();
@@ -142,12 +148,22 @@ public class HomeDefinition {
     @And("I click on select an existing photo")
     public void iClickOnSelectAnExistingPhoto() {
         homePage.existingphoto.click();
-        Alert alert =getMDriver().switchTo().alert();
-        alert.accept();
-
     }
 
     @And("I select photo from library")
-    public void iSelectPhotoFromLibrary() {
+    public void iSelectPhotoFromLibrary() throws IOException {
+        String sourceFilePath = "C:\\Users\\umitkalemkus\\Pictures\\DCIM\\belt.png";
+        File sourcefile = new File(sourceFilePath);
+        getAndroidDriver().pushFile("/SDCARD/İndililenler/belt.jpg",sourcefile);
+
+
+    }
+
+    @Then("I verify the results related to my photo")
+    public void iVerifyTheResultsRelatedToMyPhoto() {
+        seachPage.contentOfSearchList;
+
+
+
     }
 }
