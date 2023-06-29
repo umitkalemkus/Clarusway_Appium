@@ -16,6 +16,9 @@ public class ItemPage {
     public WebElement backButton;
 
 
+    @AndroidFindBy(xpath = "(//*[@resource-id='com.google.android.providers.media.module:id/icon_thumbnail'])[1]")
+    public WebElement watchButton;
+
 
 
 

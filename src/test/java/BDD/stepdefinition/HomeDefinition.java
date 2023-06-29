@@ -12,6 +12,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.math3.analysis.function.Exp;
+import org.apache.poi.hpsf.Array;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -152,16 +153,25 @@ public class HomeDefinition {
 
     @And("I select photo from library")
     public void iSelectPhotoFromLibrary() throws IOException {
-        String sourceFilePath = "C:\\Users\\umitkalemkus\\Pictures\\DCIM\\belt.png";
+        String sourceFilePath = "\"C:\\Users\\umitkalemkus\\Pictures\\DCIM\\belt.png\"";
         File sourcefile = new File(sourceFilePath);
-        getAndroidDriver().pushFile("/SDCARD/İndililenler/belt.jpg",sourcefile);
+        MDriver.getAndroidDriver().pushFile("sdcard/İndililenler/belt.jpg",sourcefile);
+        itemPage.watchButton.click();
+
+
 
 
     }
 
     @Then("I verify the results related to my photo")
     public void iVerifyTheResultsRelatedToMyPhoto() {
-        seachPage.contentOfSearchList;
+        List<WebElement> contentOfSearchListTitle = seachPage.contentOfSearchListTitle;
+        List<String> titleText = new ArrayList<>();
+        for (int i = 0; i < contentOfSearchListTitle.size(); i++) {
+            titleText.add(contentOfSearchListTitle.get(i).getText());
+            System.out.println(contentOfSearchListTitle.get(i).getText());
+
+        }
 
 
 
