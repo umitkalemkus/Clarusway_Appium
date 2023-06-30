@@ -163,6 +163,8 @@ public class HomeDefinition {
 
     }
 
+
+
     @Then("I verify the results related to my photo")
     public void iVerifyTheResultsRelatedToMyPhoto() {
         List<WebElement> contentOfSearchListTitle = seachPage.contentOfSearchListTitle;
