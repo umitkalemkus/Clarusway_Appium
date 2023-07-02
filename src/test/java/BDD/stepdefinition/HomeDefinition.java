@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.MDriver;
+import utilities.MobilUtilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -155,7 +156,7 @@ public class HomeDefinition {
     public void iSelectPhotoFromLibrary() throws IOException {
         String sourceFilePath = "\"C:\\Users\\umitkalemkus\\Pictures\\DCIM\\belt.png\"";
         File sourcefile = new File(sourceFilePath);
-        MDriver.getAndroidDriver().pushFile("sdcard/İndililenler/belt.jpg",sourcefile);
+        MDriver.getAndroidDriver().pushFile("/sdcard/indirilenler/belt.jpg",sourcefile);
         itemPage.watchButton.click();
 
 
@@ -174,6 +175,31 @@ public class HomeDefinition {
             System.out.println(contentOfSearchListTitle.get(i).getText());
 
         }
+
+        int countOfItem =0;
+        for (int i = 0; i < titleText.size(); i++) {
+            if (titleText.get(i).toLowerCase().contains("belt"))
+                countOfItem = countOfItem + 1;
+
+
+        }
+        System.out.println(countOfItem);
+
+       Assert.assertTrue(countOfItem>2);
+
+    }
+
+    @Given("I collect current total content number")
+    public void iCollectCurrentTotalContentNumber() {
+        int size = homePage.contentList.size();
+        System.out.println("size = " + size);
+
+    }
+
+    @When("I scroll down")
+    public void iScrollDown() {
+        MobilUtilities.scrollDownToElement(By.xpath("//*[@content-desc='Comfortwear ']"));
+
 
 
 
