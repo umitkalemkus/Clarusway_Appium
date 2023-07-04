@@ -57,7 +57,7 @@ public class HomePage {
 
     @AndroidFindAll({
 
-            @AndroidBy(id="com.etsy.android:id/listing_image")}
+            @AndroidBy(xpath="//*[@resource-id='com.etsy.android:id/listing_image']")}
     )
     public List<WebElement> contentList;
 
@@ -68,6 +68,16 @@ public class HomePage {
     public WebElement comfortWear;
 
 
+    @AndroidFindAll({
+
+            @AndroidBy(xpath="//*[@resource-id='com.etsy.android:id/image']")}
+    )
+    public List<WebElement> contentList2;
+
+
+
+    @AndroidFindBy(xpath = "//*[contains(@content-desc,'Cart tab')]")
+    public WebElement basketItemNumber;
 
 
 

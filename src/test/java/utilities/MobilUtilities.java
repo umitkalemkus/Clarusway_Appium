@@ -22,7 +22,7 @@ public class MobilUtilities {
 
 
         touchAction.press(PointOption.point(startX,startY))
-                        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
                 .moveTo(PointOption.point(startX,endY)).release().perform();
 
     }
