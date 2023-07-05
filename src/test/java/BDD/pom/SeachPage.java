@@ -28,6 +28,9 @@ public class SeachPage {
     List<WebElement> abc;*/
 
 
+
+
+
     @AndroidFindBy(id = "com.etsy.android:id/listing_image")
     public List<WebElement> contentOfSearchListTitle;
 
