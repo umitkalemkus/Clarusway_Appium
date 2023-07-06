@@ -31,7 +31,12 @@ public class SeachPage {
 
 
 
+
+
     @AndroidFindBy(id = "com.etsy.android:id/listing_image")
     public List<WebElement> contentOfSearchListTitle;
+
+
+
 
 }
